@@ -3,7 +3,7 @@ import { ErrorMsg, Label, StyledField, StyledForm } from "components/ContactForm
 import { Formik } from "formik";
 import Modal from "react-modal";
 import { useDispatch } from "react-redux";
-import { editContact } from 'redux/operations';
+import { editContact } from 'redux/contacts/operations';
 import { customStyles, ModalContainer, SaveButton, CancelButton } from "./ContactModal.styled";
 import { RiSaveLine } from 'react-icons/ri';
 import { MdCancelPresentation } from 'react-icons/md';
@@ -12,7 +12,7 @@ const ContactEditModal = ({ isOpen, contact, onRequestClose }) => {
    const initialValues = {
     id: contact.id,
     name: contact.name,
-    phone: contact.phone,
+    number: contact.number,
   };
   const dispatch = useDispatch();
 
@@ -40,8 +40,8 @@ const ContactEditModal = ({ isOpen, contact, onRequestClose }) => {
             </div>
             <div>
               <Label>Phone:</Label>
-              <StyledField type="tel" name="phone" />
-              <ErrorMsg name="phone" component="div" />
+              <StyledField type="tel" name="number" />
+              <ErrorMsg name="number" component="div" />
             </div>
             <div>
               <SaveButton type="submit"><RiSaveLine size={24}/></SaveButton>

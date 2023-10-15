@@ -2,8 +2,8 @@ import { Formik } from "formik";
 import * as Yup from 'yup';
 import { Button, ErrorMsg, Label, StyledField, StyledForm } from "./ContactForm.styled";
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 import { toast } from "react-hot-toast";
 
 
@@ -15,9 +15,9 @@ import { toast } from "react-hot-toast";
       value => /^[a-zA-Zа-яА-ЯёЁіІїЇ ]+((['][a-zA-Zа-яА-ЯёЁіІїЇ ])?[a-zA-Zа-яА-ЯёЁіІїЇ]*)*$/.test(value)
     )
     .required('Required'),
-    phone: Yup.string()
+    number: Yup.string()
     .test(
-      "phone",
+      "number",
       "Phone number must be digits and can contain spaces, dashes, parentheses and can start with +",
       value =>
         /\+?[0-9\s.\-()]{1,}$/.test(
@@ -32,13 +32,14 @@ export const ContactForm = () => {
     const dispatch = useDispatch();
 
     const handleSubmit = (contact, actions)=> {
+        console.log('hi')
         const isExist = contacts.some(
         item => item.name.toLowerCase() === contact.name.toLowerCase()
-            || item.phone === contact.phone
+            || item.number === contact.number
         );
     
         if (isExist) {
-           toast.error(`${contact.name} or ${contact.phone} is already in contacts.`);
+           toast.error(`${contact.name} or ${contact.number} is already in contacts.`);
             return;
         }
 
@@ -50,7 +51,7 @@ export const ContactForm = () => {
             initialValues={
                 {
                     name: "",
-                    phone: "",
+                    number: "",
                 }}
             onSubmit={(contact, actions) => handleSubmit(contact, actions)}
             validationSchema={ContactSchema}
@@ -60,9 +61,9 @@ export const ContactForm = () => {
                 <StyledField name="name" type="text" />
                     <ErrorMsg name="name" component="div"/>
                 </Label>
-                <Label>Number: 
-                <StyledField name="phone" type="tel" />
-                    <ErrorMsg name="phone" component="div"/>
+                <Label> Number: 
+                <StyledField name="number" type="tel" />
+                    <ErrorMsg name="number" component="div"/>
                     </Label>
                 <Button type="submit">Add contact</Button>
             </StyledForm>
