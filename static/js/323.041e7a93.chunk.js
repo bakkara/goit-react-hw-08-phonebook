@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkMy_Contacts=self.webpackChunkMy_Contacts||[]).push([[323],{2790:function(t,e,n){n.r(e),n.d(e,{default:function(){return o}});var s=n(1552),a=n.p+"static/media/phonebook2.dbb6509d32fa1153be1f.jpg",c=n(184);function o(){return(0,c.jsxs)(s.W,{children:[(0,c.jsx)("h1",{children:"Contacts book welcome page"}),(0,c.jsx)("img",{src:a,alt:"img",width:"300",style:{display:"block",margin:"0 auto"}})]})}}}]);
+//# sourceMappingURL=323.041e7a93.chunk.js.map
