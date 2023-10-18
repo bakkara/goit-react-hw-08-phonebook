@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkMy_Contacts=self.webpackChunkMy_Contacts||[]).push([[266],{1266:function(n,e,t){t.r(e),t.d(e,{default:function(){return r}});var c=t(184);function r(){return(0,c.jsx)("div",{children:(0,c.jsxs)("h1",{children:["Contacts book welcome page"," ",(0,c.jsx)("span",{role:"img","aria-label":"Greeting icon",children:"\ud83d\udc81\u200d\u2640\ufe0f"})]})})}}}]);
+//# sourceMappingURL=266.02f29e97.chunk.js.map
