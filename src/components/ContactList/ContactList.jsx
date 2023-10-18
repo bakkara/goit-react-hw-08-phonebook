@@ -6,12 +6,12 @@ import { Filter } from "components/Filter/Filter";
 
 export const ContactList = () => {
   const contacts = useSelector(selectVisibleContacts);
-
+const sortedContacts = contacts.sort((a, b) => a.name.localeCompare(b.name));
   return (
     <>
       <Filter/>
      <List>
-        {contacts.map(item => (
+        {sortedContacts.map(item => (
             <ListItem key={item.id}>
             <Contact contact={item}/>
             </ListItem>

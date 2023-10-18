@@ -1,12 +1,13 @@
+import { Container } from "components/App/App.styled";
+import phonebook from '../images/phonebook2.jpg'
+
 export default function Home() {
   return (
-    <div>
+    <Container>
       <h1>
-        Contacts book welcome page{' '}
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
+        Contacts book welcome page
       </h1>
-    </div>
+      <img src={phonebook} alt='img' width="300" style={{ display: 'block', margin: '0 auto' }} />
+    </Container>
   );
 }

@@ -9,8 +9,7 @@ export const Navigation = () => {
   return (
     <nav>
       <LinkWrapper>
-      <BiSolidContact size={24} />
-      
+      <BiSolidContact size={24} /> 
        <NavLinkStyled to="/">
         Home
       </NavLinkStyled>
