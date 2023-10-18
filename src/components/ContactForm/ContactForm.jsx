@@ -32,7 +32,6 @@ export const ContactForm = () => {
     const dispatch = useDispatch();
 
     const handleSubmit = (contact, actions)=> {
-        console.log('hi')
         const isExist = contacts.some(
         item => item.name.toLowerCase() === contact.name.toLowerCase()
             || item.number === contact.number
@@ -42,7 +41,7 @@ export const ContactForm = () => {
            toast.error(`${contact.name} or ${contact.number} is already in contacts.`);
             return;
         }
-
+        toast.success(`Contact ${contact.name} with number ${contact.number} is added to the phonebook!`);
         dispatch(addContact(contact));
         actions.resetForm();
   };
