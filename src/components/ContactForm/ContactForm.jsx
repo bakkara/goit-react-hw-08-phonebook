@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
 import { toast } from "react-hot-toast";
+import { Container } from "components/App/App.styled";
 
 
  export const ContactSchema = Yup.object().shape({
@@ -46,6 +47,7 @@ export const ContactForm = () => {
         actions.resetForm();
   };
     return (
+        <Container>
         <Formik
             initialValues={
                 {
@@ -66,7 +68,8 @@ export const ContactForm = () => {
                     </Label>
                 <Button type="submit">Add contact</Button>
             </StyledForm>
-        </Formik >
+            </Formik >
+        </Container>
     )
 }
 

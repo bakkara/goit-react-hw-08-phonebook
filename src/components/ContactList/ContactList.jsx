@@ -3,12 +3,14 @@ import { List, ListItem } from "./ContactList.styled"
 import {useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'redux/contacts/selectors';
 import { Filter } from "components/Filter/Filter";
+import { Container } from "components/App/App.styled";
 
 export const ContactList = () => {
   const contacts = useSelector(selectVisibleContacts);
-const sortedContacts = contacts.sort((a, b) => a.name.localeCompare(b.name));
+  const sortedContacts = contacts.sort((a, b) => a.name.localeCompare(b.name));
+  
   return (
-    <>
+    <Container>
       <Filter/>
      <List>
         {sortedContacts.map(item => (
@@ -17,7 +19,7 @@ const sortedContacts = contacts.sort((a, b) => a.name.localeCompare(b.name));
             </ListItem>
       ))}
       </List>
-    </>
+    </Container>
  )
 }
 
