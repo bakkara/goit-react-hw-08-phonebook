@@ -1,12 +1,12 @@
 export const theme = Object.freeze({
   colors: {
-    accent: '#2196F3',
-    white: '#fff',
-    gray: '#9e9e9e',
-    light: '#f2f2f2',
-    dark: '#212121',
-    primary: '#49a09d',
-    mainBackground: ['linear-gradient(to top, #abbaab, #fff)'],
+    accent: '#96c4d3',
+    white: '#f2f2f2',
+    light: 'rgba(255,255,255,.5)',
+    dark: '#240b36',
+    primary: '#02646d',
+    mainBackground: ['linear-gradient(to top, #c6dadf, #96c4d3, #ffffff)'],
+    headerBackground: ['linear-gradient(to top, #0f2027, #203a43, #2c5364)'],
   },
   fontSizes: {
     small: '14px',

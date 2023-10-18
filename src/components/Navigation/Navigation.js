@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import { useAuth } from 'hooks';
+import { LinkWrapper, NavLinkStyled } from './Navigation.styled';
+import { BiSolidContact } from 'react-icons/bi';
 
 
 export const Navigation = () => {
@@ -7,14 +8,18 @@ export const Navigation = () => {
 
   return (
     <nav>
-      <NavLink to="/">
+      <LinkWrapper>
+      <BiSolidContact size={24} />
+      
+       <NavLinkStyled to="/">
         Home
-      </NavLink>
+      </NavLinkStyled>
       {isLoggedIn && (
-        <NavLink to="/contacts">
+        <NavLinkStyled to="/contacts">
           Contacts
-        </NavLink>
-      )}
-    </nav>
+        </NavLinkStyled>
+        )}
+      </LinkWrapper>
+      </nav>
   );
 };
